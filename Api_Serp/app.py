@@ -24,7 +24,7 @@ def feel_ing(input_ar):
     return output_en,output_ar
     print(f"Output EN : {output_en}\nOutput AR : {output_ar} \n ")
 
-str = "انا اشعر بالخوف"
-en ,ar = feel_ing(str)
-print(en)
-print(ar)
+#str = "انا اشعر بالخوف"
+#en ,ar = feel_ing(str)
+#print(en)
+#print(ar)

@@ -11,32 +11,6 @@ our_token = '71d169a1'
 @api_view(['GET', 'POST'])
 def serp_api(request):
   data = {}
-  if request.method == 'POST':
-    try : 
-      data = JSONParser().parse(request)
-      token = data["token"]
-      if token == our_token:
-        keyword = data['keyword']
-        section_number = data['section_number']
-        if type(section_number) == type('str'):
-          print('str')
-          section_number = int(section_number)
-        language= data['language']
-        country = data['country']
-        
-      else : 
-        data["detail"]="Bad Token "
-        return Response(data ,status=status.HTTP_401_UNAUTHORIZED)
-       
-    except Exception as e: 
-       data["detail"]="Bad Request POST"
-       return Response(data,status= status.HTTP_400_BAD_REQUEST) 
-    try:
-          article_res = article(keyword,section_number,api_token,language,country)
-    except:
-          data["detail"]="Bad Serp request "
-          return Response(data,status= status.HTTP_400_BAD_REQUEST) 
-    return Response(article_res)
   if request.method == 'GET':
         final = {}
         sucess = ""
